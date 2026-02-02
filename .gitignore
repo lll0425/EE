@@ -1,20 +1,18 @@
-# 排除大型原始數據
+# 排除大數據
 dataset/
+data_in/
 a0.2weight/
 knn_model/
-data_in/  # 排除可能存在的遞迴目錄
+checkpoints/
 
-# 排除訓練產生的權重檔
+# 排除所有權重檔
 *.pth
 *.pt
 *.pkl
-archive/
 
-# 排除快取
+# 排除垃圾檔
 __pycache__/
 .ipynb_checkpoints/
 
-# 允許上傳實驗結果的紀錄檔 (csv, json, log)
-!outputs/**/*.log
-!outputs/**/*.json
-!outputs/**/*.csv
+# 允許 archive 與 outputs 進入追蹤 (不排除它們)
+# 只要裡面沒有 .pt 檔案，就不會很大
